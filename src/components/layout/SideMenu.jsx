@@ -1,12 +1,40 @@
-import { AppstoreOutlined, UserOutlined, SettingOutlined, MoneyCollectOutlined, SecurityScanOutlined } from '@ant-design/icons';
+import {
+    AppstoreOutlined,
+    UserOutlined,
+    HistoryOutlined,
+    SettingOutlined,
+    MoneyCollectOutlined,
+    SecurityScanOutlined,
+} from '@ant-design/icons';
 import { Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export default function SideMenu() {
+    const navigate = useNavigate()
     const items = [
         {
             key: 'user',
             label: '用户管理',
             icon: <UserOutlined />,
+            children: [
+                {
+                    key: 'user-data',
+                    label: '用户管理',
+                },
+                {
+                    key: 'register-data',
+                    label: '注册管理',
+                },
+                {
+                    key: 'login-data',
+                    label: '登入管理',
+                },
+            ],
+        },
+        {
+            key: 'history-data',
+            label: '历史数据管理',
+            icon: <HistoryOutlined />,
             children: [
                 {
                     key: 'topup_detail',
@@ -73,7 +101,8 @@ export default function SideMenu() {
     ];
 
     const onClick = (e) => {
-        console.log(e)
+        const path = e.keyPath.reverse().join('/')
+        navigate(path)
     }
     return (
         <div className="fixed w-[256px] h-[100vh] bg-menu-back overflow-auto">
