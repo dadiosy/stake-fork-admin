@@ -4,7 +4,7 @@ export default function MainContainer() {
     return (
         <div className="pl-[256px] pt-[60px]">
             <div className="p-[16px] bg-gray-300">
-                <div className="bg-white p-[16px]">
+                <div className="bg-white p-[16px] rounded-[4px]">
                     <Outlet />
                 </div>
             </div>

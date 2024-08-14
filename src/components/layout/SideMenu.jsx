@@ -7,7 +7,7 @@ import {
     SecurityScanOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SideMenu() {
     const navigate = useNavigate()
@@ -107,7 +107,7 @@ export default function SideMenu() {
     return (
         <div className="fixed w-[256px] h-[100vh] bg-menu-back overflow-auto z-[99]">
             <div className='h-[60px] bg-main flex flex-col justify-center items-center fixed w-[256px] z-[100]'>
-                <h3 className='text-h4 text-white'>后台管理系统</h3>
+                <h3 className='text-h5 text-white'><Link to="/">后台管理系统</Link></h3>
             </div>
             <Menu
                 className='mt-[60px]'
