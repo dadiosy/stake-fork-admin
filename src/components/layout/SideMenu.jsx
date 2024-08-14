@@ -105,7 +105,7 @@ export default function SideMenu() {
         navigate(path)
     }
     return (
-        <div className="fixed w-[256px] h-[100vh] bg-menu-back overflow-auto">
+        <div className="fixed w-[256px] h-[100vh] bg-menu-back overflow-auto z-[99]">
             <div className='h-[60px] bg-main flex flex-col justify-center items-center fixed w-[256px] z-[100]'>
                 <h3 className='text-h4 text-white'>后台管理系统</h3>
             </div>
