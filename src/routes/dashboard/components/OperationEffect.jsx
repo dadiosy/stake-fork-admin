@@ -3,7 +3,7 @@ import FunctionLabel from "../../../components/common/FunctionLabel"
 
 export default function OperationEffect({ effectResult = 0 }) {
     return (
-        <Card className="shadow-sm">
+        <Card className="shadow-md">
             <div>
                 <p className="text-label">运营活动效果</p>
                 <p className="text-h4">{effectResult}%</p>

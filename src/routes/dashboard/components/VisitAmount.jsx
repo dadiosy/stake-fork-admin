@@ -33,7 +33,7 @@ export default function VisitAmount({ visitAmount = 0, visitByDay = 0 }) {
         shapeField: 'smooth',
     };
     return (
-        <Card className="shadow-sm">
+        <Card className="shadow-md">
             <div>
                 <p className="text-label">访问量</p>
                 <p className="text-h4">¥ {visitAmount}</p>

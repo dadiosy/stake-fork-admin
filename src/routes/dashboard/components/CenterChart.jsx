@@ -61,7 +61,7 @@ export default function CenterChart() {
         },
     ];
     return (
-        <Card>
+        <Card className="shadow-md">
             <Tabs defaultActiveKey="1" items={items} />
         </Card>
     )

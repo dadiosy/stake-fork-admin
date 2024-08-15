@@ -3,7 +3,7 @@ import FunctionLabel from "../../../components/common/FunctionLabel"
 
 export default function TotalSales({ totalSales = 0, deltaBySameWeek = 0, deltaBySameDay = 0, salesByDay = 0 }) {
     return (
-        <Card className="shadow-sm">
+        <Card className="shadow-md">
             <div>
                 <p className="text-label">总营销额</p>
                 <p className="text-h4">¥ {totalSales}</p>

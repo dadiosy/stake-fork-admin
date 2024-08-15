@@ -32,7 +32,7 @@ export default function UserAmount({ userAmount = 0, newUsers = 0 }) {
         },
     };
     return (
-        <Card className="shadow-sm">
+        <Card className="shadow-md">
             <div>
                 <p className="text-label">用户数</p>
                 <p className="text-h4">¥ {userAmount}</p>
