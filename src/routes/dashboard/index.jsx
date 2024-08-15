@@ -6,6 +6,7 @@ import UserAmount from "./components/UserAmount";
 import OperationEffect from "./components/OperationEffect";
 import CenterChart from "./components/CenterChart";
 import HotGames from "./components/HotGames";
+import GameUsersPieChart from "./components/GameUsersPieChart";
 
 export default function Dashboard() {
     return (
@@ -31,7 +32,7 @@ export default function Dashboard() {
                 <CenterChart />
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-[24px]">
                     <HotGames />
-                    <HotGames />
+                    <GameUsersPieChart />
                 </div>
 
             </div>
