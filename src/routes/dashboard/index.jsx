@@ -5,6 +5,7 @@ import VisitAmount from "./components/VisitAmount";
 import UserAmount from "./components/UserAmount";
 import OperationEffect from "./components/OperationEffect";
 import CenterChart from "./components/CenterChart";
+import HotGames from "./components/HotGames";
 
 export default function Dashboard() {
     return (
@@ -27,9 +28,12 @@ export default function Dashboard() {
                     <UserAmount userAmount={4440} newUsers={120} />
                     <OperationEffect effectResult={78} />
                 </div>
-                <div>
-                    <CenterChart />
+                <CenterChart />
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-[24px]">
+                    <HotGames />
+                    <HotGames />
                 </div>
+
             </div>
         </div>
     )
