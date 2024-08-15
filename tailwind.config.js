@@ -144,10 +144,9 @@ module.exports = {
         }
       ],
       'label': [
-        '0.88rem',
+        '0.875rem',
         {
-          lineHeight: '0.88rem',
-          fontWeight: '600'
+          lineHeight: '1.375rem',
         }
       ],
       'input': [
