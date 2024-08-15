@@ -11,9 +11,9 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="h-screen bg-main-darkest flex flex-col justify-center items-center">
+        <div className="h-screen bg-main-brighter flex flex-col justify-center items-center">
             <h5 className="text-h5 text-white mb-[20px]">后台管理系统登录</h5>
-            <Card className='md:w-[400px]'>
+            <Card className='md:w-[400px] w-[90%] shadow-md'>
                 <Form
                     name="login"
                     initialValues={{ remember: true }}
