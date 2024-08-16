@@ -7,9 +7,10 @@ import {
     SecurityScanOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { MENU_WIDTH } from '../../constant';
 
-export default function SideMenu() {
+export default function SideMenu({ menuWidth = MENU_WIDTH }) {
     const navigate = useNavigate()
     const items = [
         {
@@ -59,14 +60,14 @@ export default function SideMenu() {
             label: '投注管理',
             icon: <MoneyCollectOutlined />,
             children: [
-                { key: '5', label: 'Option 5' },
-                { key: '6', label: 'Option 6' },
+                { key: '5', label: 'xx管理' },
+                { key: '6', label: 'xx管理' },
                 {
                     key: 'sub3',
-                    label: 'Submenu',
+                    label: '子菜单',
                     children: [
-                        { key: '7', label: 'Option 7' },
-                        { key: '8', label: 'Option 8' },
+                        { key: '7', label: 'xx管理' },
+                        { key: '8', label: 'xx管理' },
                     ],
                 },
             ],
@@ -76,10 +77,10 @@ export default function SideMenu() {
             label: '游戏管理',
             icon: <AppstoreOutlined />,
             children: [
-                { key: '9', label: 'Option 9' },
-                { key: '10', label: 'Option 10' },
-                { key: '11', label: 'Option 11' },
-                { key: '12', label: 'Option 12' },
+                { key: '9', label: 'xx管理' },
+                { key: '10', label: 'xx管理' },
+                { key: '11', label: 'xx管理' },
+                { key: '12', label: 'xx管理' },
             ],
         },
         {
@@ -87,7 +88,7 @@ export default function SideMenu() {
             label: '安全管理',
             icon: <SecurityScanOutlined />,
             children: [
-                { key: '13', label: 'Option 13' },
+                { key: '13', label: 'xx管理' },
             ],
         },
         {
@@ -95,7 +96,7 @@ export default function SideMenu() {
             label: '代理管理',
             icon: <SettingOutlined />,
             children: [
-                { key: '14', label: 'Option 9' },
+                { key: '14', label: 'xx管理' },
             ],
         },
     ];
@@ -105,12 +106,9 @@ export default function SideMenu() {
         navigate(path)
     }
     return (
-        <div className="fixed w-[256px] h-[100vh] bg-menu-back overflow-auto z-[9999]">
-            <div className='h-[60px] bg-main flex flex-col justify-center items-center fixed w-[256px] z-[100]'>
-                <h3 className='text-h5 text-white'><Link to="/">后台管理系统</Link></h3>
-            </div>
+        <div className="fixed h-dvh top-[60px] bg-menu-back overflow-auto z-[9999] transition-all" style={{ width: menuWidth }}>
             <Menu
-                className='mt-[60px]'
+                className='pt-[10px]'
                 theme='dark'
                 onClick={onClick}
                 style={{ width: 256 }}
