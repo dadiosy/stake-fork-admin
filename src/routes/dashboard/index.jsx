@@ -12,6 +12,7 @@ import Overview from "./components/Overview";
 import ChargeAndWithdraw from "./components/ChargeAndWithdraw";
 import UserDataAnalysis from "./components/UserDataAnalysis";
 import UserRetentionData from "./components/UserRetentionData";
+import AgentDataAnalysis from "./components/AgentDataAnalysis";
 
 export default function Dashboard() {
     const blocks = [
@@ -38,7 +39,7 @@ export default function Dashboard() {
         {
             key: 'agent_data_analysis',
             label: <h6 className="text-h6">代理数据分析</h6>,
-            children: <p>text</p>,
+            children: <AgentDataAnalysis />,
         },
         {
             key: 'agent_retention',
