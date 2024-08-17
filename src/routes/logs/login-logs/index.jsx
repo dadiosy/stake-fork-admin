@@ -159,9 +159,11 @@ const LoginLogs = () => {
                 {/* Search Panel with Border */}
                 <div className="border border-gray-300 p-4 rounded">
                     <div className="flex flex-wrap justify-between items-center gap-4">
-                        <div className="flex items-center">
-                            <span>选择时间:</span>
-                            <RangePicker className="ml-2" />
+                    <div className="flex items-center w-full">
+                            <span className="mr-2">选择时间:</span>
+                            <div className="flex-1 overflow-x-auto">
+                                <RangePicker className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-64" />
+                            </div>
                         </div>
                         <div className="flex items-center space-x-2">
                             <Button icon={<ReloadOutlined />}>重置</Button>
