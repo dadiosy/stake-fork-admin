@@ -101,37 +101,37 @@ const columns = [
     {
         title: '登录时间',
         dataIndex: 'date',
-        key: 'date',
+        key: 'key',
     },
     {
         title: '注册IP',
         dataIndex: 'registerIp',
-        key: 'registerIp',
+        key: 'key',
     },
     {
         title: '登录IP',
         dataIndex: 'loginIp',
-        key: 'loginIp',
+        key: 'key',
     },
     {
         title: '归属地',
         dataIndex: 'place',
-        key: 'place',
+        key: 'key',
     },
     {
         title: '登录平台',
         dataIndex: 'loginPlatform',
-        key: 'loginPlatform',
+        key: 'key',
     },
     {
         title: '登录设备',
         dataIndex: 'loginMachine',
-        key: 'loginMachine',
+        key: 'key',
     },
     {
         title: '设备号',
         dataIndex: 'machineNumber',
-        key: 'machineNumber',
+        key: 'key',
     },
 ];
 
