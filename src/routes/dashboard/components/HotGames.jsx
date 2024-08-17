@@ -5,22 +5,18 @@ export default function HotGames() {
         {
             title: '排名',
             dataIndex: 'ranking',
-            key: 'ranking'
         },
         {
             title: '游戏名称',
             dataIndex: 'game',
-            key: 'game'
         },
         {
             title: '用户数',
             dataIndex: 'gameUsers',
-            key: 'gameUsers'
         },
         {
             title: '周涨幅',
             dataIndex: 'increament',
-            key: 'increament'
         },
     ]
 
@@ -96,6 +92,7 @@ export default function HotGames() {
                 columns={columns}
                 dataSource={data}
                 size="small"
+                rowKey="ranking"
             />
         </Card>
     )
