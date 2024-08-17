@@ -17,7 +17,7 @@ export default function Layout() {
 
     useEffect(() => {
         if (location.pathname === '/') {
-            navigate('/dashboard');
+            navigate('/home/dashboard');
         }
     }, [location.pathname]);
 

@@ -6,6 +6,7 @@ import {
     MoneyCollectOutlined,
     SecurityScanOutlined,
     ClockCircleOutlined,
+    HomeOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -14,6 +15,17 @@ import { MENU_WIDTH } from '../../constant';
 export default function SideMenu({ menuWidth = MENU_WIDTH }) {
     const navigate = useNavigate()
     const items = [
+        {
+            key: 'home',
+            label: '主页',
+            icon: <HomeOutlined />,
+            children: [
+                {
+                    key: 'dashboard',
+                    label: '仪表板',
+                },
+            ]
+        },
         {
             key: 'user',
             label: '用户管理',
