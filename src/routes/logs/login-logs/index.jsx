@@ -158,11 +158,11 @@ const LoginLogs = () => {
             <Space direction="vertical" size="large" className="w-full">
                 {/* Search Panel with Border */}
                 <div className="border border-gray-300 p-4 rounded">
-                    <div className="flex flex-wrap justify-between items-center gap-4">
-                    <div className="flex items-center w-full">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center">
                             <span className="mr-2">选择时间:</span>
-                            <div className="flex-1 overflow-x-auto">
-                                <RangePicker className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-64" />
+                            <div className="flex-1 mt-2 sm:mt-0">
+                                <RangePicker className="w-full sm:w-32 md:w-40 lg:w-48 xl:w-52" />
                             </div>
                         </div>
                         <div className="flex items-center space-x-2">
