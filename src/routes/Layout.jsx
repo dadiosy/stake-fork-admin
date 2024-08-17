@@ -9,7 +9,7 @@ export default function Layout() {
     const navigate = useNavigate();
     const location = useLocation()
     const [menuWidth, setMenuWidth] = useState(MENU_WIDTH)
-    const [collapsed, setCollapsed] = useState(false)
+    const [collapsed, setCollapsed] = useState(true)
 
     const handleCollapse = () => {
         setCollapsed(!collapsed)
