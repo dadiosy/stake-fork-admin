@@ -12,7 +12,7 @@ import { Menu } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { MENU_WIDTH } from '../../constant';
 
-export default function SideMenu({ menuWidth = MENU_WIDTH }) {
+export default function SideMenu({ menuWidth = MENU_WIDTH, collapsed = false }) {
     const navigate = useNavigate()
     const items = [
         {
@@ -129,12 +129,10 @@ export default function SideMenu({ menuWidth = MENU_WIDTH }) {
     return (
         <div className="fixed h-dvh top-[60px] bg-menu-back overflow-auto z-[9999] transition-all" style={{ width: menuWidth }}>
             <Menu
-                className='pt-[10px]'
+                className='pt-[10px] z-[9998]'
                 theme='dark'
                 onClick={onClick}
                 style={{ width: 256 }}
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
                 mode="inline"
                 items={items}
             />

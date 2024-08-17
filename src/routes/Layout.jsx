@@ -29,9 +29,14 @@ export default function Layout() {
         }
     }, [collapsed])
 
+    const handleClickBackground = () => {
+        setCollapsed(true)
+    }
+
     return (
         <div className="">
-            <SideMenu menuWidth={menuWidth} />
+            <SideMenu menuWidth={menuWidth} collapsed={collapsed} />
+            <div className={`fixed left-0 top-[60px] h-full bg-main opacity-[0.5] z-[10] ${!collapsed ? 'w-full' : ''}`} onClick={handleClickBackground}></div>
             <Header onCollapseChange={handleCollapse} collapsed={collapsed} paddingLeft={menuWidth} />
             <MainContainer paddingLeft={menuWidth} />
         </div>
