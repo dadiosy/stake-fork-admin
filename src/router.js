@@ -7,6 +7,7 @@ import UserData from "./routes/user/UserData";
 import Dashboard from "./routes/dashboard";
 import LoginPage from "./routes/auth/login";
 import Register from "./routes/auth/register";
+import LoginLogs from "./routes/logs/login-logs";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
             {
                 path: 'user/user-data',
                 element: <UserData />
-            }
+            },
+            {
+                path: 'logs/login-logs',
+                element: <LoginLogs />
+            },
         ],
     },
 ]);

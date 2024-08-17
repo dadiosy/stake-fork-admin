@@ -5,6 +5,7 @@ import {
     SettingOutlined,
     MoneyCollectOutlined,
     SecurityScanOutlined,
+    ClockCircleOutlined,
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -97,6 +98,14 @@ export default function SideMenu({ menuWidth = MENU_WIDTH }) {
             icon: <SettingOutlined />,
             children: [
                 { key: '14', label: 'xx管理' },
+            ],
+        },
+        {
+            key: 'logs',
+            label: '日记管理',
+            icon: <ClockCircleOutlined />,
+            children: [
+                { key: 'login-logs', label: '登录日记' },
             ],
         },
     ];
