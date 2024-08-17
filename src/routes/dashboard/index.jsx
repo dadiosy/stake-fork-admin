@@ -13,6 +13,7 @@ import ChargeAndWithdraw from "./components/ChargeAndWithdraw";
 import UserDataAnalysis from "./components/UserDataAnalysis";
 import UserRetentionData from "./components/UserRetentionData";
 import AgentDataAnalysis from "./components/AgentDataAnalysis";
+import AgentRetention from "./components/AgentRetention";
 
 export default function Dashboard() {
     const blocks = [
@@ -44,7 +45,7 @@ export default function Dashboard() {
         {
             key: 'agent_retention',
             label: <h6 className="text-h6">代理留存</h6>,
-            children: <p>text</p>,
+            children: <AgentRetention />,
         },
         {
             key: 'game_data',
