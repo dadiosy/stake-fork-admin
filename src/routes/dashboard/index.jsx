@@ -11,6 +11,7 @@ import { Collapse } from 'antd';
 import Overview from "./components/Overview";
 import ChargeAndWithdraw from "./components/ChargeAndWithdraw";
 import UserDataAnalysis from "./components/UserDataAnalysis";
+import UserRetentionData from "./components/UserRetentionData";
 
 export default function Dashboard() {
     const blocks = [
@@ -32,7 +33,7 @@ export default function Dashboard() {
         {
             key: 'user_retention_data',
             label: <h6 className="text-h6">用户留存数据</h6>,
-            children: <p>text</p>,
+            children: <UserRetentionData />,
         },
         {
             key: 'agent_data_analysis',
