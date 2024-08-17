@@ -146,14 +146,14 @@ const LoginLogs = () => {
     };
 
     return (
-        <div style={{ padding: 20 }}>
-            <Space direction="vertical" size="large" style={{ width: "100%" }}>
+        <div className="p-5">
+            <Space direction="vertical" size="large" className="w-full">
                 {/* Search Panel with Border */}
-                <div style={{ border: '1px solid #d9d9d9', padding: '16px', borderRadius: '4px' }}>
+                <div className="border border-gray-300 p-4 rounded">
                     <Row gutter={16} align="middle" justify="space-between">
                         <Col>
                             <span>选择时间:</span>
-                            <RangePicker style={{ marginLeft: 8 }} />
+                            <RangePicker className="ml-2" />
                         </Col>
                         <Col>
                             <Space>
@@ -177,6 +177,7 @@ const LoginLogs = () => {
                         pageSizeOptions: ['5', '10', '20', '50'],
                     }}
                     onChange={handleTableChange}
+                    className="mt-4"
                 />
             </Space>
         </div>
