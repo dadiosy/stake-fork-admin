@@ -7,8 +7,48 @@ import OperationEffect from "./components/OperationEffect";
 import CenterChart from "./components/CenterChart";
 import HotGames from "./components/HotGames";
 import GameUsersPieChart from "./components/GameUsersPieChart";
+import { Collapse } from 'antd';
+import Overview from "./components/Overview";
 
 export default function Dashboard() {
+    const blocks = [
+        {
+            key: 'overview',
+            label: <h6 className="text-h6">平台总览</h6>,
+            children: <Overview />,
+        },
+        {
+            key: 'charge_and_withdraw',
+            label: <h6 className="text-h6">充提数据</h6>,
+            children: <p>text</p>,
+        },
+        {
+            key: 'user_data_analysis',
+            label: <h6 className="text-h6">用户数据分析</h6>,
+            children: <p>text</p>,
+        },
+        {
+            key: 'user_retention_data',
+            label: <h6 className="text-h6">用户留存数据</h6>,
+            children: <p>text</p>,
+        },
+        {
+            key: 'agent_data_analysis',
+            label: <h6 className="text-h6">代理数据分析</h6>,
+            children: <p>text</p>,
+        },
+        {
+            key: 'agent_retention',
+            label: <h6 className="text-h6">代理留存</h6>,
+            children: <p>text</p>,
+        },
+        {
+            key: 'game_data',
+            label: <h6 className="text-h6">游戏数据</h6>,
+            children: <p>text</p>,
+        },
+    ];
+
     return (
         <div>
             <Breadcrumb
@@ -34,7 +74,7 @@ export default function Dashboard() {
                     <HotGames />
                     <GameUsersPieChart />
                 </div>
-
+                <Collapse items={blocks} />;
             </div>
         </div>
     )

@@ -22,6 +22,9 @@ module.exports = {
         'mines-pink-hover': '#962eff',
         'fail': '#071824',
         'menu-back': '#001529',
+        'default': '#FFFFFF',
+        'primary': '#1677ff',
+        'success': '#45c55c'
       },
       screens: {
         'ml': { 'raw': '(min-width: 917px)' },
