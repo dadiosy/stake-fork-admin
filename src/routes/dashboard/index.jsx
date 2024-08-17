@@ -10,6 +10,7 @@ import GameUsersPieChart from "./components/GameUsersPieChart";
 import { Collapse } from 'antd';
 import Overview from "./components/Overview";
 import ChargeAndWithdraw from "./components/ChargeAndWithdraw";
+import UserDataAnalysis from "./components/UserDataAnalysis";
 
 export default function Dashboard() {
     const blocks = [
@@ -26,7 +27,7 @@ export default function Dashboard() {
         {
             key: 'user_data_analysis',
             label: <h6 className="text-h6">用户数据分析</h6>,
-            children: <p>text</p>,
+            children: <UserDataAnalysis />,
         },
         {
             key: 'user_retention_data',

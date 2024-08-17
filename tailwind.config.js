@@ -24,7 +24,8 @@ module.exports = {
         'menu-back': '#001529',
         'default': '#FFFFFF',
         'primary': '#1677ff',
-        'success': '#45c55c'
+        'success': '#45c55c',
+        'yellow': '#D5B516'
       },
       screens: {
         'ml': { 'raw': '(min-width: 917px)' },
