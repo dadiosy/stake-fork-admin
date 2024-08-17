@@ -101,41 +101,42 @@ const columns = [
     {
         title: '登录时间',
         dataIndex: 'date',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '注册IP',
         dataIndex: 'registerIp',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '登录IP',
         dataIndex: 'loginIp',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '归属地',
         dataIndex: 'place',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '登录平台',
         dataIndex: 'loginPlatform',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '登录设备',
         dataIndex: 'loginMachine',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
     {
         title: '设备号',
         dataIndex: 'machineNumber',
-        key: 'key',
+        className: "text-xs sm:text-sm md:text-base",
     },
 ];
 
 const LoginLogs = () => {
+
     const [pagination, setPagination] = useState({
         current: 1,
         pageSize: 5,
@@ -150,35 +151,36 @@ const LoginLogs = () => {
             <Space direction="vertical" size="large" className="w-full">
                 {/* Search Panel with Border */}
                 <div className="border border-gray-300 p-4 rounded">
-                    <Row gutter={16} align="middle" justify="space-between">
-                        <Col>
+                    <div className="flex flex-wrap justify-between items-center gap-4">
+                        <div className="flex items-center">
                             <span>选择时间:</span>
                             <RangePicker className="ml-2" />
-                        </Col>
-                        <Col>
-                            <Space>
-                                <Button icon={<ReloadOutlined />}>重置</Button>
-                                <Button type="primary" icon={<SearchOutlined />}>
-                                    查询
-                                </Button>
-                            </Space>
-                        </Col>
-                    </Row>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <Button icon={<ReloadOutlined />}>重置</Button>
+                            <Button type="primary" icon={<SearchOutlined />}>
+                                查询
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-
-                {/* Table Panel */}
-                <Table
-                    dataSource={dataSource}
-                    columns={columns}
-                    pagination={{
-                        current: pagination.current,
-                        pageSize: pagination.pageSize,
-                        showSizeChanger: true,
-                        pageSizeOptions: ['5', '10', '20', '50'],
-                    }}
-                    onChange={handleTableChange}
-                    className="mt-4"
-                />
+                <div className="overflow-x-auto">
+                    <Table
+                        dataSource={dataSource}
+                        columns={columns}
+                        pagination={{
+                            current: pagination.current,
+                            pageSize: pagination.pageSize,
+                            showSizeChanger: true,
+                            pageSizeOptions: ['5', '10', '20', '50'],
+                        }}
+                        onChange={handleTableChange}
+                        scroll={{ x: 'max-content' }}
+                        className="mt-4"
+                        size="small"
+                        rowKey="key"
+                    />
+                </div>
             </Space>
         </div>
     );
