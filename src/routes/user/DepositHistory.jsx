@@ -1,30 +1,62 @@
 import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
-import { Select } from "antd";
-import { Space, Table, Form } from "antd";
+import { Button, Input, Space, Table, Form, Select, Tag, DatePicker } from "antd";
 import { useState, useEffect } from "react";
-import { userInfo } from "../../constant";
+import { depositHistory } from "../../constant/depositHistory";
+import PriceRangePicker from "../../components/common/PriceRangePicker";
+const { RangePicker } = DatePicker
 
-export default function WithdrawHistory() {
+export default function DepositHistory() {
 	const [loading, setLoading] = useState(false)
 	const [data, setData] = useState()
 	const [tableParams, setTableParams] = useState({
 		pagination: {
 			current: 1,
-			pageSize: 10
+			pageSize: 20
 		}
 	})
 
 	const columns = [
 		{
-			title: '',
-			dataIndex: '',
-			sorter: true,
+			title: '提交时间',
+			dataIndex: 'submit_date',
 			className: 'text-xs sm:text-sm md:text-base'
+		}, {
+			title: '打款时间',
+			dataIndex: 'deposit_date',
+			className: 'text-xs sm:text-sm md:text-base text-center',
+			render: (date) => date ? date : '-'
+		}, {
+			title: '平台单号',
+			dataIndex: 'platform_id',
+			className: 'text-xs sm:text-sm md:text-base'
+		}, {
+			title: '渠道订单号',
+			dataIndex: 'channel_order_number',
+			className: 'text-xs sm:text-sm md:text-base'
+		}, {
+			title: '充值金额',
+			dataIndex: 'deposit_amount',
+			className: 'text-xs sm:text-sm md:text-base'
+		}, {
+			title: '赠金',
+			dataIndex: 'bonus',
+			className: 'text-xs sm:text-sm md:text-base'
+		}, {
+			title: '订单状态',
+			dataIndex: 'order_state',
+			className: 'text-xs sm:text-sm md:text-base',
+			render: state => {
+				switch (state) {
+					case 'unpaid': return <Tag bordered={false}>未支付</Tag>
+					case 'done': return <Tag bordered={false} color="green">已完成</Tag>
+					case 'pending': return <Tag bordered={false} color="grey">等待支付</Tag>
+					case 'canceled': return <Tag bordered={false} color="red">已取消</Tag>
+				}
+			}
 		}
 	]
 	const fetchData = () => {
-		setData(userInfo)
+		setData(depositHistory)
 	}
 	useEffect(() => {
 		fetchData();
@@ -55,9 +87,14 @@ export default function WithdrawHistory() {
 				<div className="overflow-x-auto">
 					<Table
 						columns={columns}
-						rowKey={(record) => record.id}
+						rowKey={(record) => record.platform_id}
 						dataSource={data}
-						pagination={tableParams.pagination}
+						pagination={{
+							current: tableParams.pagination.current,
+							pageSize: tableParams.pagination.pageSize,
+							showSizeChanger: true,
+							pageSizeOptions: ['20', '50'],
+						}}
 						loading={loading}
 						scroll={{ x: 'max-content' }}
 						className="mt-4"
@@ -83,24 +120,15 @@ function Filters() {
 						initialValues={{ size: 'small' }}
 						style={{ maxWidth: 600 }}
 					>
-						<div className="grid md:grid-cols-3">
+						<div className="grid md:grid-cols-2">
 							<div>
-								<Form.Item label="客户账号">
-									<Input />
+								<Form.Item label="选择时间">
+									<RangePicker />
 								</Form.Item>
 							</div>
 							<div>
-								<Form.Item label="客户账号">
-									<Select>
-										<Select.Option value="demo">Demo</Select.Option>
-									</Select>
-								</Form.Item>
-							</div>
-							<div>
-								<Form.Item label="客户账号">
-									<Select>
-										<Select.Option value="demo">Demo</Select.Option>
-									</Select>
+								<Form.Item label="金额范围">
+									<PriceRangePicker />
 								</Form.Item>
 							</div>
 						</div>

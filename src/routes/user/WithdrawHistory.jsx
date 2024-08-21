@@ -2,6 +2,7 @@ import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Input, DatePicker, Select, Space, Table, Form, Tag } from "antd";
 import { useState, useEffect } from "react";
 import { withdrawHistory } from "../../constant/withdrawHistory";
+import PriceRangePicker from "../../components/common/PriceRangePicker";
 const { RangePicker } = DatePicker;
 
 export default function WithdrawHistory() {
@@ -148,11 +149,7 @@ function Filters() {
 							</div>
 							<div>
 								<Form.Item label="金额范围" layout="horizontal" >
-									<div className="flex border border-slate-300 rounded-lg">
-										<Input variant="borderless" />
-										<span className="mt-1 mx-2">至</span>
-										<Input variant="borderless" />
-									</div>
+									<PriceRangePicker />
 								</Form.Item>
 							</div>
 						</div>
