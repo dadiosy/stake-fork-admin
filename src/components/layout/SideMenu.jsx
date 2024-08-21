@@ -35,6 +35,10 @@ export default function SideMenu({ menuWidth = MENU_WIDTH, collapsed = false }) 
                     key: 'user-data',
                     label: '用户管理',
                 },
+                {
+                    key:'withdraw-history',
+                    label: '提现记录'
+                }
                 // {
                 //     key: 'register-data',
                 //     label: '注册管理',

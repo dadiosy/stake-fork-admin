@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Table, Space, DatePicker, Form, Input, Select } from "antd";
-import { userInfo } from "../../constant";
+import { userInfo } from '../../constant/userInfo'
 import { SearchOutlined, ReloadOutlined } from "@ant-design/icons";
 
 export default function UserData() {
@@ -9,7 +9,7 @@ export default function UserData() {
     const [tableParams, setTableParams] = useState({
         pagination: {
             current: 1,
-            pageSize: 10,
+            pageSize: 20,
         },
     });
     const columns = [
@@ -129,12 +129,17 @@ export default function UserData() {
                         columns={columns}
                         rowKey={(record) => record.account_id}
                         dataSource={data}
-                        pagination={tableParams.pagination}
                         loading={loading}
                         onChange={handleTableChange}
                         scroll={{ x: 'max-content' }}
                         className="mt-4"
                         size="small"
+                        pagination={{
+							current: tableParams.pagination.current,
+							pageSize: tableParams.pagination.pageSize,
+							showSizeChanger: true,
+							pageSizeOptions: ['20', '50'],
+						}}
                     />
 
                 </div>

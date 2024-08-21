@@ -4,6 +4,7 @@ import {
 import Layout from "./routes/Layout";
 import ErrorPage from "./error-page";
 import UserData from "./routes/user/UserData";
+import WithdrawHistory from "./routes/user/WithdrawHistory";
 import Dashboard from "./routes/dashboard";
 import LoginPage from "./routes/auth/login";
 import Register from "./routes/auth/register";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: 'user/user-data',
                 element: <UserData />
+            },
+            {
+                path: 'user/withdraw-history',
+                element: <WithdrawHistory />
             },
             {
                 path: 'logs/login-logs',
