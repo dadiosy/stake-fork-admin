@@ -6,6 +6,7 @@ import ErrorPage from "./error-page";
 import UserData from "./routes/user/UserData";
 import WithdrawHistory from "./routes/user/WithdrawHistory";
 import DepositHistory from "./routes/user/DepositHistory";
+import ManualDeposit from "./routes/user/ManualDeposit";
 import Dashboard from "./routes/dashboard";
 import LoginPage from "./routes/auth/login";
 import Register from "./routes/auth/register";
@@ -25,26 +26,12 @@ const router = createBrowserRouter([
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
-            {
-                path: '/home/dashboard',
-                element: <Dashboard />
-            },
-            {
-                path: 'user/user-data',
-                element: <UserData />
-            },
-            {
-                path: 'user/withdraw-history',
-                element: <WithdrawHistory />
-            },
-            {
-                path: 'user/deposit-history',
-                element: <DepositHistory />
-            },
-            {
-                path: 'logs/login-logs',
-                element: <LoginLogs />
-            },
+            { path: '/home/dashboard', element: <Dashboard /> },
+            { path: 'user/user-data', element: <UserData /> },
+            { path: 'user/withdraw-history', element: <WithdrawHistory /> },
+            { path: 'user/deposit-history', element: <DepositHistory /> },
+            { path: 'user/manual-deposit', element: <ManualDeposit /> },
+            { path: 'logs/login-logs', element: <LoginLogs /> },
         ],
     },
 ]);

@@ -25,7 +25,8 @@ export default function SideMenu({ menuWidth = MENU_WIDTH, collapsed = false }) 
             children: [
                 { key: 'user-data', label: '用户管理' },
                 { key: 'withdraw-history', label: '提现记录' },
-                { key: 'deposit-history', label: '充值记录' }
+                { key: 'deposit-history', label: '充值记录' },
+                { key: 'manual-deposit', label: '人工充值' },
             ],
         },
         {
